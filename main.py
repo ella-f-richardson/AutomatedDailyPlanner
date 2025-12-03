@@ -21,7 +21,7 @@ HEADERS = {"Authorization" : f"Bearer {TOKEN}"} # Headers for API requests
 # Return days until due date -> float
 def days_until_due(due_at):
     if due_at is None:
-        return None
+        return 100
     
     due = parser.isoparse(due_at).astimezone(timezone.utc)
     now = datetime.now(timezone.utc)
@@ -85,12 +85,19 @@ def main():
 
     for a in assignments:
         print(f"{a['course']} - {a['name']}")
-        if a["days_until"] is None:
+        if a["days_until_due"] is None:
             print("     Due: No due date")
         else:
-            print(f"    Due in: {a['days_until']:.1f} days")
+            print(f"    Due in: {a['days_until_due']:.1f} days")
         print(f"    Urgency: {a['urgency']}\n")
 
 
 if __name__ == "__main__":
     main()
+
+
+
+# To make a new venv run:
+#   Set-ExecutionPolicy -Scope CurrentUser >> RemoteSigned
+#   venv\Scripts\activate
+#   Set-ExecutionPolicy -Scope CurrentUser >> Restricted
