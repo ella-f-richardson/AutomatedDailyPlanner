@@ -95,8 +95,14 @@ def main():
 if __name__ == "__main__":
     main()
 
+#   TODO:
+#   - Remove previous classes or unwanted classes / only display current classes
+#   - Make a specific format for submitting commit messages
+#   - BIG STEP: Make this a checklist instead of a normal list
+#       - canvas doesn't let you cross off all assignments - how do I get around that?
 
 
+# *Since my computer default doesn't allow me to run certain files I have to do this
 # To make a new venv run:
 #   Set-ExecutionPolicy -Scope CurrentUser >> RemoteSigned
 #   venv\Scripts\activate
